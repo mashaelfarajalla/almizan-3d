@@ -1,0 +1,5 @@
+node_modules
+dist
+_backup_vanilla
+*.log
+.DS_Store
