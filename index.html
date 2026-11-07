@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>الميزان | للمحاماة والاستشارات القانونية</title>
+  <meta name="description" content="مكتب الميزان للمحاماة والاستشارات القانونية — خبرة تمتد لأكثر من 25 عامًا في القانون التجاري، التقاضي، التحكيم، والملكية الفكرية.">
+  <meta name="theme-color" content="#0a0d14">
+  <meta property="og:title" content="الميزان للمحاماة والاستشارات القانونية">
+  <meta property="og:description" content="حين يكون الحق قضيتك، نكون نحن صوته.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23d4a944' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 6v34M14 42h20M10 12h28'/%3E%3Cpath d='M10 12 4 26h12zM38 12l-6 14h12z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="module" crossorigin src="./assets/index-BglKs851.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-gGhTvJuP.css">
+</head>
+<body>
+
+  <!-- ===== WebGL layer — React Three Fiber mounts here (fixed, behind the content) ===== -->
+  <div class="webgl" id="webgl" aria-hidden="true"></div>
+
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="preloader__logo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 6v34M14 42h20M10 12h28"/>
+      <path d="M10 12 4 26h12zM38 12l-6 14h12z"/>
+      <path d="M4 26a6 6 0 0 0 12 0M32 26a6 6 0 0 0 12 0"/>
+    </svg>
+    <span class="preloader__name">الميزان</span>
+    <span class="preloader__bar"><i></i></span>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="الميزان — الصفحة الرئيسية">
+        <svg class="logo__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 6v34M14 42h20M10 12h28"/>
+          <path d="M10 12 4 26h12zM38 12l-6 14h12z"/>
+        </svg>
+        <span class="logo__text">
+          <strong>الميزان</strong>
+          <small>للمحاماة والاستشارات القانونية</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="القائمة الرئيسية">
+        <a href="#about" class="nav__link">من نحن</a>
+        <a href="#practice" class="nav__link">مجالات الممارسة</a>
+        <a href="#process" class="nav__link">منهجيتنا</a>
+        <a href="#team" class="nav__link">فريقنا</a>
+        <a href="#testimonials" class="nav__link">آراء العملاء</a>
+        <a href="#contact" class="nav__link">تواصل معنا</a>
+        <a href="#contact" class="btn btn--gold nav__cta">احجز استشارة</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <p class="eyebrow hero__eyebrow">منذ عام 1999 · الرياض</p>
+        <h1 class="hero__title" data-split>
+          حين يكون <span class="text-gold">الحق</span> قضيتك،
+          نكون نحن صوته
+        </h1>
+        <p class="hero__lead">
+          مكتب محاماة رائد يقدّم حلولًا قانونية متكاملة للأفراد والشركات،
+          بخبرة تتجاوز ربع قرن ونزاهة لا تقبل المساومة.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--gold btn--lg magnetic">
+            احجز استشارتك الآن
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </a>
+          <a href="#practice" class="btn btn--ghost btn--lg">اكتشف خدماتنا</a>
+        </div>
+
+        <ul class="hero__badges">
+          <li><strong>+25</strong><span>عامًا من الخبرة</span></li>
+          <li><strong>+3200</strong><span>قضية ناجحة</span></li>
+          <li><strong>98%</strong><span>رضا العملاء</span></li>
+        </ul>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="انتقل للأسفل">
+        <span class="scroll-hint__mouse"><i></i></span>
+        <span>مرّر للأسفل</span>
+      </a>
+    </section>
+
+    <!-- ===== Scroll story — the 3D scale is choreographed by GSAP ScrollTrigger ===== -->
+    <section class="story" id="story" aria-label="قيمنا">
+      <div class="story__sticky">
+        <div class="container story__inner">
+          <div class="story__panels">
+            <article class="story__panel">
+              <span class="story__index">01</span>
+              <p class="eyebrow">ميزانُنا الأول</p>
+              <h2 class="story__title">النزاهة <span class="text-gold">قبل كل شيء</span></h2>
+              <p>نزن كل قضية بميزان الحق وحده. لا مساومة على المبادئ، ولا وعود لا نملك الوفاء بها.</p>
+            </article>
+            <article class="story__panel">
+              <span class="story__index">02</span>
+              <p class="eyebrow">ميزانُنا الثاني</p>
+              <h2 class="story__title">دقة في <span class="text-gold">أدق التفاصيل</span></h2>
+              <p>نقرأ ما بين السطور، ونحلّل كل مستند وكل سابقة قضائية، لأن التفصيلة الصغيرة قد ترجّح الكفّة.</p>
+            </article>
+            <article class="story__panel">
+              <span class="story__index">03</span>
+              <p class="eyebrow">ميزانُنا الثالث</p>
+              <h2 class="story__title">حين تميل الكفّة <span class="text-gold">لصالحك</span></h2>
+              <p>أكثر من 3200 قضية رجحت فيها كفّة موكلينا. هدفنا نتيجة عادلة تحمي حقك ومستقبلك.</p>
+            </article>
+          </div>
+          <div class="story__nav" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <p class="story__hint">حرّك المؤشر فوق كفّتي الميزان، أو اضغط عليه لتدويره</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>القانون التجاري</span><i>✦</i><span>التحكيم الدولي</span><i>✦</i><span>التقاضي</span><i>✦</i>
+        <span>الملكية الفكرية</span><i>✦</i><span>الوساطة</span><i>✦</i><span>الأحوال الشخصية</span><i>✦</i>
+        <span>القانون التجاري</span><i>✦</i><span>التحكيم الدولي</span><i>✦</i><span>التقاضي</span><i>✦</i>
+        <span>الملكية الفكرية</span><i>✦</i><span>الوساطة</span><i>✦</i><span>الأحوال الشخصية</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== About ===== -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__visual" data-reveal>
+          <div class="frame3d tilt" data-tilt="10">
+            <div class="frame3d__layer frame3d__back"></div>
+            <div class="frame3d__layer frame3d__mid">
+              <img src="./assets/shield-DRP0mojz.webp" alt="" width="355" height="447" loading="lazy" decoding="async">
+            </div>
+            <div class="frame3d__layer frame3d__front">
+              <span class="frame3d__num">25</span>
+              <span class="frame3d__label">عامًا من الدفاع<br>عن حقوق موكلينا</span>
+            </div>
+            <div class="tilt__glare"></div>
+          </div>
+          <blockquote class="about__quote">
+            «العدل أساس الملك، والأمانة أساس مهنتنا.»
+          </blockquote>
+        </div>
+
+        <div class="about__text">
+          <p class="eyebrow" data-reveal>من نحن</p>
+          <h2 class="section__title" data-reveal>إرثٌ من الثقة،<br>ورؤيةٌ نحو <span class="text-gold">المستقبل</span></h2>
+          <p class="section__lead" data-reveal>
+            تأسس مكتب الميزان ليكون شريكًا قانونيًا موثوقًا يجمع بين عمق الخبرة المحلية وأفضل الممارسات الدولية.
+            نؤمن بأن كل قضية قصة إنسانية تستحق الإصغاء، ونعمل بدقة واحترافية لحماية مصالح موكلينا في كل مرحلة.
+          </p>
+          <ul class="checklist">
+            <li data-reveal><span class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>سرية تامة</strong><p>نلتزم بأعلى معايير السرية وحماية بيانات موكلينا.</p></div></li>
+            <li data-reveal><span class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>خبرة متخصصة</strong><p>فريق من نخبة المحامين والمستشارين في مختلف فروع القانون.</p></div></li>
+            <li data-reveal><span class="checklist__icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><strong>شفافية في التعامل</strong><p>أتعاب واضحة وتواصل مستمر يطلعك على كل تطور في قضيتك.</p></div></li>
+          </ul>
+          <div class="signature" data-reveal>
+            <span class="signature__name">د. خالد العتيبي</span>
+            <span class="signature__role">الشريك المؤسس والمدير التنفيذي</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat" data-reveal>
+          <span class="stat__num"><b data-count="25">0</b>+</span>
+          <span class="stat__label">عامًا من الخبرة</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><b data-count="3200">0</b>+</span>
+          <span class="stat__label">قضية تم كسبها</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><b data-count="40">0</b>+</span>
+          <span class="stat__label">محاميًا ومستشارًا</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><b data-count="98">0</b>%</span>
+          <span class="stat__label">نسبة رضا العملاء</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Practice Areas ===== -->
+    <section class="section practice" id="practice">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-reveal>مجالات الممارسة</p>
+          <h2 class="section__title" data-reveal>خبرة قانونية <span class="text-gold">شاملة</span> في كل ما يهمّك</h2>
+          <p class="section__lead" data-reveal>نقدّم خدمات قانونية متخصصة تغطي احتياجات الأفراد والشركات بمختلف أحجامها وقطاعاتها.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/contract-sS94xCv5.webp" alt="عقد قانوني" width="435" height="460" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">القانون التجاري والشركات</h3>
+            <p class="card__text">تأسيس الشركات، الاندماج والاستحواذ، صياغة العقود التجارية، والحوكمة والامتثال.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">01</span>
+            <div class="tilt__glare"></div>
+          </article>
+
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/courthouse-Ct295Wxk.webp" alt="مبنى المحكمة" width="460" height="369" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">التقاضي وتسوية المنازعات</h3>
+            <p class="card__text">تمثيل احترافي أمام جميع درجات المحاكم العامة والتجارية والإدارية.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">02</span>
+            <div class="tilt__glare"></div>
+          </article>
+
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/gavel-hz53Bx7j.webp" alt="مطرقة القاضي" width="460" height="352" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">القضايا الجنائية</h3>
+            <p class="card__text">دفاع قوي ومدروس في القضايا الجنائية والجرائم المالية والمعلوماتية.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">03</span>
+            <div class="tilt__glare"></div>
+          </article>
+
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/books-CP9m7mAj.webp" alt="كتب القانون" width="460" height="299" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">الأحوال الشخصية</h3>
+            <p class="card__text">قضايا الأسرة والميراث والوصايا والحضانة بأعلى درجات الخصوصية والتفهّم.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">04</span>
+            <div class="tilt__glare"></div>
+          </article>
+
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/scales-DV8ub5UG.webp" alt="ميزان العدالة" width="460" height="427" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">التحكيم والوساطة</h3>
+            <p class="card__text">تمثيل في التحكيم التجاري المحلي والدولي، والوساطة لتسوية النزاعات بسرعة وسرية.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">05</span>
+            <div class="tilt__glare"></div>
+          </article>
+
+          <article class="card tilt" data-tilt="8" data-reveal>
+            <div class="card__media"><img src="./assets/shield-DRP0mojz.webp" alt="درع الحماية القانونية" width="355" height="447" loading="lazy" decoding="async"></div>
+            <h3 class="card__title">الملكية الفكرية</h3>
+            <p class="card__text">تسجيل وحماية العلامات التجارية وبراءات الاختراع وحقوق المؤلف ومكافحة التقليد.</p>
+            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+            <span class="card__num">06</span>
+            <div class="tilt__glare"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section process" id="process">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-reveal>منهجيتنا</p>
+          <h2 class="section__title" data-reveal>رحلتك القانونية <span class="text-gold">خطوة بخطوة</span></h2>
+          <p class="section__lead" data-reveal>منهجية واضحة ومدروسة تضمن لك الطمأنينة من اللحظة الأولى وحتى تحقيق النتيجة.</p>
+        </header>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line"><i id="timelineFill"></i></div>
+
+          <div class="step" data-reveal>
+            <span class="step__dot">1</span>
+            <div class="step__body">
+              <h3>الاستشارة الأولية</h3>
+              <p>نستمع إليك بعناية لفهم تفاصيل موقفك وأهدافك، ونقدّم تقييمًا مبدئيًا صريحًا.</p>
+            </div>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__dot">2</span>
+            <div class="step__body">
+              <h3>دراسة القضية وتحليلها</h3>
+              <p>نجمع المستندات ونحلّل الجوانب النظامية والسوابق القضائية ذات الصلة بدقة.</p>
+            </div>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__dot">3</span>
+            <div class="step__body">
+              <h3>بناء الاستراتيجية</h3>
+              <p>نضع خطة عمل قانونية محكمة مع بدائل واضحة وتقدير واقعي للنتائج والتكاليف.</p>
+            </div>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__dot">4</span>
+            <div class="step__body">
+              <h3>التمثيل والمتابعة</h3>
+              <p>نمثّلك بكل قوة ونطلعك أولًا بأول على المستجدات حتى إغلاق الملف بنجاح.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section class="section team" id="team">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-reveal>فريقنا</p>
+          <h2 class="section__title" data-reveal>نخبة من <span class="text-gold">الخبراء</span> في خدمتك</h2>
+          <p class="section__lead" data-reveal>محامون ومستشارون معتمدون يجمعون بين التميّز الأكاديمي والخبرة العملية الواسعة.</p>
+        </header>
+
+        <div class="team__grid">
+          <div class="member" data-reveal tabindex="0">
+            <div class="member__inner">
+              <div class="member__face member__front">
+                <div class="member__avatar" style="--h:38">خ ع</div>
+                <h3>د. خالد العتيبي</h3>
+                <p>الشريك المؤسس</p>
+              </div>
+              <div class="member__face member__back">
+                <h3>د. خالد العتيبي</h3>
+                <p>دكتوراه في القانون التجاري الدولي، خبرة 28 عامًا في التحكيم وقضايا الشركات الكبرى.</p>
+                <span class="member__tag">التحكيم · الشركات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="member" data-reveal tabindex="0">
+            <div class="member__inner">
+              <div class="member__face member__front">
+                <div class="member__avatar" style="--h:28">س م</div>
+                <h3>أ. سارة المنصور</h3>
+                <p>شريكة — قانون الشركات</p>
+              </div>
+              <div class="member__face member__back">
+                <h3>أ. سارة المنصور</h3>
+                <p>متخصصة في الاندماج والاستحواذ والحوكمة، قادت أكثر من 150 صفقة استثمارية.</p>
+                <span class="member__tag">الاستثمار · الحوكمة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="member" data-reveal tabindex="0">
+            <div class="member__inner">
+              <div class="member__face member__front">
+                <div class="member__avatar" style="--h:45">ف ح</div>
+                <h3>أ. فيصل الحربي</h3>
+                <p>رئيس قسم التقاضي</p>
+              </div>
+              <div class="member__face member__back">
+                <h3>أ. فيصل الحربي</h3>
+                <p>مترافع أمام المحاكم العامة والتجارية وديوان المظالم بسجل حافل من الأحكام.</p>
+                <span class="member__tag">التقاضي · الجنائي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="member" data-reveal tabindex="0">
+            <div class="member__inner">
+              <div class="member__face member__front">
+                <div class="member__avatar" style="--h:33">ن ق</div>
+                <h3>أ. نورة القحطاني</h3>
+                <p>مستشارة الملكية الفكرية</p>
+              </div>
+              <div class="member__face member__back">
+                <h3>أ. نورة القحطاني</h3>
+                <p>خبيرة في حماية العلامات التجارية وحقوق الابتكار وقضايا التقنية والبيانات.</p>
+                <span class="member__tag">الملكية الفكرية · التقنية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="team__hint">مرّر المؤشر أو اضغط على البطاقة للتعرّف أكثر</p>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow" data-reveal>آراء العملاء</p>
+          <h2 class="section__title" data-reveal>ثقة موكلينا <span class="text-gold">شهادتنا</span></h2>
+        </header>
+
+        <div class="slider" id="slider" data-reveal>
+          <svg class="slider__quote" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5H3v8h4c0 4-2 5-4 5zM14 21c3 0 7-1 7-8V5h-7v8h4c0 4-2 5-4 5z"/></svg>
+          <div class="slider__track" aria-live="polite">
+            <figure class="slide is-active">
+              <blockquote>تعاملت مع مكتب الميزان في نزاع تجاري معقّد، وكان الفريق على قدر عالٍ من الاحترافية والوضوح. حققنا نتيجة فاقت توقعاتنا.</blockquote>
+              <figcaption><strong>عبدالله الشمري</strong><span>رئيس تنفيذي — شركة تقنية</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>شعرت بالأمان منذ الاستشارة الأولى. تواصل مستمر ومتابعة دقيقة لكل تفاصيل قضيتي. أنصح بهم بكل ثقة.</blockquote>
+              <figcaption><strong>منى الزهراني</strong><span>موكّلة — قضايا الأحوال الشخصية</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>شريك قانوني حقيقي لشركتنا منذ سنوات. ساعدونا في التوسّع إقليميًا وحماية علامتنا التجارية بكفاءة نادرة.</blockquote>
+              <figcaption><strong>ماجد الدوسري</strong><span>مؤسس — علامة تجارية للتجزئة</span></figcaption>
+            </figure>
+          </div>
+          <div class="slider__controls">
+            <button class="slider__btn" data-dir="-1" aria-label="السابق"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <div class="slider__dots" role="tablist"></div>
+            <button class="slider__btn" data-dir="1" aria-label="التالي"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <div class="container cta__inner" data-reveal>
+        <img class="cta__art" src="./assets/gavel-hz53Bx7j.webp" alt="" width="460" height="352" loading="lazy" decoding="async">
+        <div class="cta__text">
+          <h2>هل تحتاج إلى استشارة قانونية عاجلة؟</h2>
+          <p>فريقنا جاهز للرد على استفساراتك خلال 24 ساعة.</p>
+        </div>
+        <a href="tel:+966110000000" class="btn btn--dark btn--lg magnetic">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          اتصل بنا الآن
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow" data-reveal>تواصل معنا</p>
+          <h2 class="section__title" data-reveal>لنبدأ معًا <span class="text-gold">حماية حقوقك</span></h2>
+          <p class="section__lead" data-reveal>املأ النموذج وسيتواصل معك أحد مستشارينا في أقرب وقت. جميع المعلومات تُعامل بسرية تامة.</p>
+
+          <ul class="info-list">
+            <li data-reveal>
+              <span class="info-list__icon"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><strong>العنوان</strong><span>طريق الملك فهد، برج الميزان، الطابق 18، الرياض</span></div>
+            </li>
+            <li data-reveal>
+              <span class="info-list__icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <div><strong>الهاتف</strong><a href="tel:+966110000000" dir="ltr">+966 11 000 0000</a></div>
+            </li>
+            <li data-reveal>
+              <span class="info-list__icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <div><strong>البريد الإلكتروني</strong><a href="mailto:info@almizan-law.example">info@almizan-law.example</a></div>
+            </li>
+            <li data-reveal>
+              <span class="info-list__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+              <div><strong>ساعات العمل</strong><span>الأحد – الخميس: 9:00 ص – 6:00 م</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="contactForm" novalidate data-reveal>
+          <div class="form__row">
+            <label class="field">
+              <input type="text" name="name" required placeholder=" " autocomplete="name">
+              <span>الاسم الكامل</span>
+            </label>
+            <label class="field">
+              <input type="tel" name="phone" required placeholder=" " autocomplete="tel" pattern="[0-9+\s]{8,}">
+              <span>رقم الجوال</span>
+            </label>
+          </div>
+          <label class="field">
+            <input type="email" name="email" required placeholder=" " autocomplete="email">
+            <span>البريد الإلكتروني</span>
+          </label>
+          <label class="field field--select">
+            <select name="service" required>
+              <option value="" selected disabled hidden></option>
+              <option>القانون التجاري والشركات</option>
+              <option>التقاضي وتسوية المنازعات</option>
+              <option>القضايا الجنائية</option>
+              <option>الأحوال الشخصية</option>
+              <option>التحكيم والوساطة</option>
+              <option>الملكية الفكرية</option>
+              <option>أخرى</option>
+            </select>
+            <span>نوع الخدمة</span>
+          </label>
+          <label class="field">
+            <textarea name="message" rows="4" required placeholder=" "></textarea>
+            <span>تفاصيل استفسارك</span>
+          </label>
+          <button type="submit" class="btn btn--gold btn--lg btn--block">
+            إرسال الطلب
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#hero" class="logo">
+          <svg class="logo__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M24 6v34M14 42h20M10 12h28"/><path d="M10 12 4 26h12zM38 12l-6 14h12z"/>
+          </svg>
+          <span class="logo__text"><strong>الميزان</strong><small>للمحاماة والاستشارات القانونية</small></span>
+        </a>
+        <p>شريكك القانوني الموثوق منذ 1999. نلتزم بالنزاهة والتميّز في كل ما نقدّمه.</p>
+        <div class="socials">
+          <a href="#" aria-label="لينكدإن"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+          <a href="#" aria-label="إكس"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+          <a href="#" aria-label="إنستغرام"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#practice">مجالات الممارسة</a></li>
+          <li><a href="#team">فريقنا</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>خدماتنا</h4>
+        <ul>
+          <li><a href="#practice">القانون التجاري</a></li>
+          <li><a href="#practice">التقاضي والتحكيم</a></li>
+          <li><a href="#practice">الملكية الفكرية</a></li>
+          <li><a href="#practice">الأحوال الشخصية</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>النشرة القانونية</h4>
+        <p>اشترك لتصلك آخر المستجدات النظامية.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.reset(); this.querySelector('button').textContent='تم ✓';">
+          <input type="email" required placeholder="بريدك الإلكتروني" aria-label="بريدك الإلكتروني">
+          <button type="submit">اشتراك</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> الميزان للمحاماة. جميع الحقوق محفوظة.</p>
+      <p>ترخيص رقم: 000/00/000</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966500000000" class="whatsapp" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.2-1.7-1-1 .7c-1-.5-1.8-1.3-2.3-2.3l.7-1-1-1.7z"/></svg>
+  </a>
+  <a href="#hero" class="to-top" id="toTop" aria-label="العودة للأعلى">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </a>
+
+</body>
+</html>
