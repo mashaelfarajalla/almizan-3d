@@ -199,9 +199,6 @@ function scrubbed() {
 
   // parallax depth
   gsap.to('.about__quote', { yPercent: -60, ease: 'none', scrollTrigger: { trigger: '.about', scrub: true } });
-  $$('.card__num').forEach((n) => gsap.fromTo(n, { y: 40 }, {
-    y: -40, ease: 'none', scrollTrigger: { trigger: n.closest('.card'), start: 'top bottom', end: 'bottom top', scrub: true },
-  }));
 }
 
 /* ---------- Marquee that reacts to scroll velocity & direction ---------- */

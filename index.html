@@ -25,17 +25,23 @@
 
   <!-- ===== Preloader ===== -->
   <div class="preloader" id="preloader" aria-hidden="true">
-    <svg class="preloader__logo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M24 6v34M14 42h20M10 12h28"/>
-      <path d="M10 12 4 26h12zM38 12l-6 14h12z"/>
-      <path d="M4 26a6 6 0 0 0 12 0M32 26a6 6 0 0 0 12 0"/>
-    </svg>
-    <span class="preloader__name">الميزان</span>
-    <span class="preloader__bar"><i></i></span>
+    <div class="preloader__inner">
+      <svg class="preloader__logo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 6v34M14 42h20M10 12h28"/>
+        <path d="M10 12 4 26h12zM38 12l-6 14h12z"/>
+        <path d="M4 26a6 6 0 0 0 12 0M32 26a6 6 0 0 0 12 0"/>
+      </svg>
+      <div class="preloader__name"><span>الميزان</span></div>
+      <div class="preloader__bar"><i></i></div>
+      <div class="preloader__count"><span>0</span>%</div>
+    </div>
   </div>
 
   <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Custom cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ===== Header ===== -->
   <header class="header" id="header">
@@ -211,69 +217,46 @@
       </div>
     </section>
 
-    <!-- ===== Practice Areas ===== -->
-    <section class="section practice" id="practice">
-      <div class="container">
-        <header class="section__head">
-          <p class="eyebrow" data-reveal>مجالات الممارسة</p>
-          <h2 class="section__title" data-reveal>خبرة قانونية <span class="text-gold">شاملة</span> في كل ما يهمّك</h2>
-          <p class="section__lead" data-reveal>نقدّم خدمات قانونية متخصصة تغطي احتياجات الأفراد والشركات بمختلف أحجامها وقطاعاتها.</p>
-        </header>
+    <!-- ===== Practice Areas — cinematic 3D showcase (see src/showcase/) ===== -->
+    <section class="showcase" id="practice" aria-label="مجالات الممارسة">
+      <div class="showcase__glow" aria-hidden="true"></div>
+      <div class="showcase__stage" id="showStage" aria-label="نموذج ثلاثي الأبعاد — اسحب لتدويره"></div>
 
-        <div class="cards">
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/contract.webp" alt="عقد قانوني" width="435" height="460" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">القانون التجاري والشركات</h3>
-            <p class="card__text">تأسيس الشركات، الاندماج والاستحواذ، صياغة العقود التجارية، والحوكمة والامتثال.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">01</span>
-            <div class="tilt__glare"></div>
-          </article>
+      <div class="showcase__head">
+        <p class="eyebrow">مجالات الممارسة</p>
+        <p class="showcase__sub">ستة تخصصات · فريق واحد</p>
+      </div>
 
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/courthouse.webp" alt="مبنى المحكمة" width="460" height="369" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">التقاضي وتسوية المنازعات</h3>
-            <p class="card__text">تمثيل احترافي أمام جميع درجات المحاكم العامة والتجارية والإدارية.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">02</span>
-            <div class="tilt__glare"></div>
-          </article>
+      <div class="showcase__info" aria-live="polite">
+        <div class="sc-label"><i class="sq"></i><span class="js-sc-eyebrow"></span></div>
+        <div class="sc-title-wrap"></div>
+        <p class="sc-desc js-sc-desc"></p>
+        <dl class="sc-meta js-sc-meta"></dl>
+      </div>
 
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/gavel.webp" alt="مطرقة القاضي" width="460" height="352" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">القضايا الجنائية</h3>
-            <p class="card__text">دفاع قوي ومدروس في القضايا الجنائية والجرائم المالية والمعلوماتية.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">03</span>
-            <div class="tilt__glare"></div>
-          </article>
+      <aside class="showcase__panel">
+        <div class="sc-thumbs">
+          <button class="sc-thumb sc-thumb--wide js-sc-wide" type="button" aria-label="عرض تفاصيل الخدمة" data-cursor="view"></button>
+          <button class="sc-thumb sc-thumb--tall js-sc-tall" type="button" aria-label="التخصص التالي" data-cursor="next"></button>
+        </div>
+        <h3 class="sc-ptitle js-sc-ptitle"></h3>
+        <p class="sc-ptext js-sc-ptext"></p>
+        <div class="sc-quote"><i class="line"></i><span class="js-sc-quote"></span></div>
+        <button class="sc-btn js-sc-detail" type="button" aria-haspopup="dialog" aria-controls="scDetail">
+          <span class="sc-btn__text">تفاصيل الخدمة</span><span class="sc-btn__fill"></span>
+        </button>
+      </aside>
 
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/books.webp" alt="كتب القانون" width="460" height="299" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">الأحوال الشخصية</h3>
-            <p class="card__text">قضايا الأسرة والميراث والوصايا والحضانة بأعلى درجات الخصوصية والتفهّم.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">04</span>
-            <div class="tilt__glare"></div>
-          </article>
+      <div class="showcase__hint" aria-hidden="true"><i></i><span>اسحب لتدوير النموذج · حرّك للتبديل</span></div>
 
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/scales.webp" alt="ميزان العدالة" width="460" height="427" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">التحكيم والوساطة</h3>
-            <p class="card__text">تمثيل في التحكيم التجاري المحلي والدولي، والوساطة لتسوية النزاعات بسرعة وسرية.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">05</span>
-            <div class="tilt__glare"></div>
-          </article>
-
-          <article class="card tilt" data-tilt="8" data-reveal>
-            <div class="card__media"><img src="assets/img/shield.webp" alt="درع الحماية القانونية" width="355" height="447" loading="lazy" decoding="async"></div>
-            <h3 class="card__title">الملكية الفكرية</h3>
-            <p class="card__text">تسجيل وحماية العلامات التجارية وبراءات الاختراع وحقوق المؤلف ومكافحة التقليد.</p>
-            <a href="#contact" class="card__link">اطلب استشارة <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-            <span class="card__num">06</span>
-            <div class="tilt__glare"></div>
-          </article>
+      <div class="showcase__bottom">
+        <div class="sc-nav">
+          <div class="sc-dots js-sc-dots" role="tablist" aria-label="اختر التخصص"></div>
+          <div class="sc-counter" dir="ltr"><span class="js-sc-cur">01</span><i></i><span class="js-sc-total">06</span></div>
+        </div>
+        <div class="sc-arrows">
+          <button class="sc-arrow js-sc-prev" type="button" aria-label="التخصص السابق"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="sc-arrow js-sc-next" type="button" aria-label="التخصص التالي"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
         </div>
       </div>
     </section>
@@ -563,6 +546,35 @@
       <p>ترخيص رقم: 000/00/000</p>
     </div>
   </footer>
+
+  <!-- ===== Practice-area detail (dialog) ===== -->
+  <div class="scd" id="scDetail" role="dialog" aria-modal="true" aria-labelledby="scd-title" aria-hidden="true" data-lenis-prevent>
+    <button class="scd__close" type="button" aria-label="إغلاق"><span>إغلاق</span><i></i></button>
+    <div class="scd__grid">
+      <div class="scd__content">
+        <div class="sc-label"><i class="sq"></i><span class="js-scd-eyebrow"></span></div>
+        <h2 class="scd__title" id="scd-title"></h2>
+        <p class="scd__lead js-scd-long"></p>
+        <h3 class="scd__h">ما نقدّمه في هذا المجال</h3>
+        <ul class="scd__services js-scd-services"></ul>
+        <div class="scd__partner js-scd-lead"></div>
+        <div class="scd__actions">
+          <a href="#contact" class="btn btn--gold btn--lg js-scd-book">احجز استشارة في هذا المجال
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+          <a href="tel:+966110000000" class="btn btn--ghost btn--lg">اتصل بنا</a>
+        </div>
+        <div class="scd__nav">
+          <button type="button" class="scd__link js-scd-prev"><i class="arrow arrow--prev"></i>السابق</button>
+          <span class="js-scd-count" dir="ltr">01 / 06</span>
+          <button type="button" class="scd__link js-scd-next">التالي<i class="arrow"></i></button>
+        </div>
+      </div>
+      <div class="scd__media">
+        <div class="scd__hero"><img class="js-scd-img" src="" alt=""></div>
+        <div class="scd__stats js-scd-stats"></div>
+      </div>
+    </div>
+  </div>
 
   <a href="https://wa.me/966500000000" class="whatsapp" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
     <svg viewBox="0 0 24 24"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.2-1.7-1-1 .7c-1-.5-1.8-1.3-2.3-2.3l.7-1-1-1.7z"/></svg>

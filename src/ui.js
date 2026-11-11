@@ -9,18 +9,7 @@ export function initUI({ lenis } = {}) {
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---------- Preloader → fires `site:ready` ---------- */
-  const ready = () => {
-    if (document.body.classList.contains('is-ready')) return;
-    document.body.classList.add('is-ready');
-    window.__siteReady = true;
-    window.dispatchEvent(new Event('site:ready'));
-    setTimeout(() => $('#preloader')?.remove(), 1200);
-  };
-  if (document.readyState === 'complete') setTimeout(ready, 400);
-  else window.addEventListener('load', () => setTimeout(ready, 500));
-  setTimeout(ready, 3500); // safety net on slow networks
-
+  // (the preloader lives in preloader.js and fires `site:ready`)
   if (!finePointer) {
     const hint = $('.story__hint');
     if (hint) hint.textContent = 'المس كفّتي الميزان أو اضغط عليه لتدويره';
@@ -72,7 +61,7 @@ export function initUI({ lenis } = {}) {
   }, { rootMargin: '-45% 0px -50% 0px' });
   $$('main section[id]').forEach((s) => sectionObserver.observe(s));
 
-  /* ---------- 3D tilt cards / magnetic buttons / cursor glow ---------- */
+  /* ---------- 3D tilt cards / magnetic buttons ---------- */
   if (finePointer && !reduceMotion) {
     $$('.tilt').forEach((el) => {
       const max = +el.dataset.tilt || 10;
@@ -107,20 +96,6 @@ export function initUI({ lenis } = {}) {
       btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
     });
 
-    const glow = $('#cursorGlow');
-    let gx = innerWidth / 2, gy = innerHeight / 2, cx = gx, cy = gy, running = false;
-    const loop = () => {
-      cx += (gx - cx) * 0.12; cy += (gy - cy) * 0.12;
-      glow.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      if (Math.abs(gx - cx) > 0.5 || Math.abs(gy - cy) > 0.5) requestAnimationFrame(loop);
-      else running = false;
-    };
-    addEventListener('pointermove', (e) => {
-      gx = e.clientX; gy = e.clientY;
-      document.body.classList.add('has-cursor');
-      if (!running) { running = true; requestAnimationFrame(loop); }
-    }, { passive: true });
-    document.addEventListener('pointerleave', () => document.body.classList.remove('has-cursor'));
   }
 
   /* ---------- Team flip on tap (touch) ---------- */
